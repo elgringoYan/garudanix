@@ -3,6 +3,7 @@
 # (On NixOS this is imported per user from nixos/configuration.nix
 # via home-manager.users."<name>".)
 {
+  pkgs,
   ...
 }:
 {
@@ -24,9 +25,48 @@
     homeDirectory = "/home/yan";
   };
 
+  programs.neovim = {
+    enable=true;
+    defaultEditor = true;
+
+    initLua = ''
+      vim.opt.shiftwidth = 2
+      vim.opt.tabstop = 2
+      vim.opt.softtabstop = 2
+      vim.opt.expandtab = true
+      '';
+  };
+
+  programs.yazi = {
+    enable = true;
+
+    package = pkgs.yazi.override {
+      _7zz = pkgs._7zz-rar;
+    };
+  };
+
+  programs.fish = {
+    enable = true;
+
+    shellAliases = {
+      vi = "nvim";
+      vim = "nvim";
+    };
+  };
+  
+  #Historique des commandes shell
+  programs.atuin = {
+    enable = true;
+    enableFishIntegration = true;
+  };
+
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
-  # home.packages = with pkgs; [ steam ];
+  home.packages = with pkgs; [
+    lazygit
+    gh
+    wl-clipboard
+  ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "26.11";
