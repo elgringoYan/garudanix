@@ -3,6 +3,7 @@
 {
   inputs,
   pkgs,
+  lib,
   ...
 }:
 {
@@ -84,6 +85,15 @@
     description = "Yanick";
     extraGroups = [ "networkmanager" "wheel" ];
   };
+
+  garuda.excludes.defaultpackages.exclude = [
+    pkgs.firedragon-bin
+  ];
+
+  # La 950 est la priorité de la liste, si on veut ajoute on doit avoir la même priorité
+  environment.plasma6.excludePackages = lib.mkOverride 950 [
+    pkgs.kdePackages.discover
+  ];
 
   home-manager.users."yan" = import ../home-manager/home.nix;
 

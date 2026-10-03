@@ -66,6 +66,7 @@
     lazygit
     gh
     wl-clipboard
+    ripgrep
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
