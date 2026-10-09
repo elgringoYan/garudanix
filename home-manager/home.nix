@@ -1,0 +1,86 @@
+# This is your home-manager configuration file
+# Use this to configure your home environment.
+# (On NixOS this is imported per user from nixos/configuration.nix
+# via home-manager.users."<name>".)
+{
+  pkgs,
+  ...
+}:
+{
+  # You can import other home-manager modules here
+  imports = [
+    # If you want to use modules your own flake exports (from modules/home-manager),
+    # add them to nixos/configuration.nix via garuda.home-manager.modules.
+
+    # Or modules exported from other flakes (such as nix-colors):
+    # inputs.nix-colors.homeManagerModules.default
+    # (needs `inputs` passed through home-manager.extraSpecialArgs first)
+
+    # You can also split up your configuration and import pieces of it here:
+    # ./nvim.nix
+  ];
+
+  home = {
+    username = "yan";
+    homeDirectory = "/home/yan";
+  };
+
+  programs.git = {
+    settings = {
+      user = {
+        name = "Yan";
+        email = "ymcdonald@izayan.ca";
+      };
+    
+      credential.helper = "!gh auth git-credential";
+    };
+  };
+
+  programs.neovim = {
+    enable=true;
+    defaultEditor = true;
+
+    initLua = ''
+      vim.opt.shiftwidth = 2
+      vim.opt.tabstop = 2
+      vim.opt.softtabstop = 2
+      vim.opt.expandtab = true
+      '';
+  };
+
+  programs.yazi = {
+    enable = true;
+
+    package = pkgs.yazi.override {
+      _7zz = pkgs._7zz-rar;
+    };
+  };
+
+  programs.fish = {
+    enable = true;
+
+    shellAliases = {
+      vi = "nvim";
+      vim = "nvim";
+    };
+  };
+
+  services.ssh-agent.enable = true;
+
+  #Historique des commandes shell
+  programs.atuin = {
+    enable = true;
+    enableFishIntegration = true;
+  };
+
+  home.packages = with pkgs; [
+    lazygit
+    gh
+    wl-clipboard
+    ripgrep
+    virt-viewer
+  ];
+
+  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
+  home.stateVersion = "26.11";
+}
