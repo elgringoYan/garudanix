@@ -79,6 +79,7 @@
     wl-clipboard
     ripgrep
     virt-viewer
+    kdePackages.kcalc
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

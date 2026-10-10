@@ -92,11 +92,26 @@
     pkgs.kdePackages.discover
   ];
 
+  programs.localsend.enable = true;
+
   environment.systemPackages = with pkgs; [
     kdePackages.qtwebengine
   ];
 
   home-manager.users."yan" = import ../home-manager/home.nix;
+
+  fileSystems = lib.genAttrs [
+    "/"
+    "/home"
+    "/root"
+    "/srv"
+    "/nix"
+    "/var/cache"
+    "/var/log"
+    "/var/tmp"
+  ] (_: {
+    options = [ "compress=zstd:3" ];
+  });
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "26.11";
