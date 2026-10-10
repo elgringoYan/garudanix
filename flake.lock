@@ -141,11 +141,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1791518755,
-        "narHash": "sha256-N4xrrhfJs02NdENR18rNlL9TZxQgyArQaa1w1KVePdQ=",
+        "lastModified": 1791574893,
+        "narHash": "sha256-wXOWu8mj0M632CKnDgyP8qMLD5erhoY6ZHqhHzRWUMQ=",
         "owner": "garuda-linux",
         "repo": "garuda-nix-subsystem",
-        "rev": "ddd21c72068f3fe1a8757bd7bbd456d458742a4d",
+        "rev": "df52a4b7bd48a67f88dc6a015241824baa194bf2",
         "type": "gitlab"
       },
       "original": {
@@ -319,9 +319,53 @@
         "type": "github"
       }
     },
+    "openlogi": {
+      "inputs": {
+        "nixpkgs": [
+          "garuda",
+          "nixpkgs"
+        ],
+        "rust-overlay": "rust-overlay"
+      },
+      "locked": {
+        "lastModified": 1791597312,
+        "narHash": "sha256-Wg0Vbwru5dlcAn6D5N46gxoF3VZPWBMq/jreXhluAo0=",
+        "owner": "AprilNEA",
+        "repo": "OpenLogi",
+        "rev": "4204a246054b0bb68ec97e97db38292dcab757f2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AprilNEA",
+        "repo": "OpenLogi",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
-        "garuda": "garuda"
+        "garuda": "garuda",
+        "openlogi": "openlogi"
+      }
+    },
+    "rust-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "openlogi",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1790756160,
+        "narHash": "sha256-NPs4nNLxCpho3Ctj8O7t/bzmX0zR8r0zndKghAFEz5U=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "ed3a19fd0439ed618ec5fe1e12f0ba69a8be38b5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
       }
     },
     "treefmt-nix": {
