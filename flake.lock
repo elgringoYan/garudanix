@@ -141,11 +141,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1791710480,
-        "narHash": "sha256-SzD6Cxwbnz0zPN3JdTpTipUVCh/MBHxWl3S8nkwohhI=",
+        "lastModified": 1791731839,
+        "narHash": "sha256-glL+7JHQEHisJCNlmS15SesgUZ60V7g3CG7ogjaw/xA=",
         "ref": "stable",
-        "rev": "8eb1a8cecf7b0240df3e73f4be384ae786824d5c",
-        "revCount": 1501,
+        "rev": "cf19cd61c55572652f3078f18a5196347ee9152e",
+        "revCount": 1503,
         "type": "git",
         "url": "https://gitlab.com/garuda-linux/garuda-nix-subsystem.git"
       },
