@@ -4,20 +4,13 @@
 # via home-manager.users."<name>".)
 {
   pkgs,
+  inputs,
   ...
 }:
 {
   # You can import other home-manager modules here
   imports = [
-    # If you want to use modules your own flake exports (from modules/home-manager),
-    # add them to nixos/configuration.nix via garuda.home-manager.modules.
-
-    # Or modules exported from other flakes (such as nix-colors):
-    # inputs.nix-colors.homeManagerModules.default
-    # (needs `inputs` passed through home-manager.extraSpecialArgs first)
-
-    # You can also split up your configuration and import pieces of it here:
-    # ./nvim.nix
+    inputs.nixdatifier.homeManagerModules.default
   ];
 
   home = {
@@ -48,6 +41,11 @@
       '';
   };
 
+  programs.nixdatifier = {
+    enable = true;
+    autostart = true; # default: true, starts in tray at login
+  };
+
   programs.yazi = {
     enable = true;
 
@@ -62,6 +60,16 @@
     shellAliases = {
       vi = "nvim";
       vim = "nvim";
+    };
+  };
+
+  programs.qutebrowser = {
+    enable = true;
+
+    settings = {
+      colors.webpage.darkmode.enabled = true;
+      content.headers.accept_language =
+        "fr-CA,fr;q=0.9,en-CA;q=0.8,en;q=0.7";
     };
   };
 

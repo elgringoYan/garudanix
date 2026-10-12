@@ -12,7 +12,9 @@
   inputs = {
     # This input brings Nixpkgs, home-manager, Chaotic-Nyx via garuda.lib.garudaSystem.
     # There is no need to specify them separately unless you have a reason to do so.
-    garuda.url = "gitlab:garuda-linux/garuda-nix-subsystem/stable";
+    # garuda.url = "gitlab:garuda-linux/garuda-nix-subsystem/stable";
+    garuda.url = "git+https://gitlab.com/garuda-linux/garuda-nix-subsystem.git?ref=stable";
+    nixdatifier.url = "github:Muddyblack/kde-nixdatifier";
   };
 
   outputs =

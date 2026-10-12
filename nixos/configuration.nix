@@ -98,6 +98,7 @@
     kdePackages.qtwebengine
   ];
 
+  home-manager.extraSpecialArgs = { inherit inputs; };
   home-manager.users."yan" = import ../home-manager/home.nix;
 
   fileSystems = lib.genAttrs [
