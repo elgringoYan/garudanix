@@ -296,11 +296,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1791717083,
-        "narHash": "sha256-l4c7/ZevA9ara3S3Nfrno7b4PlakX8+Mq5HxBhBfU7E=",
+        "lastModified": 1791793268,
+        "narHash": "sha256-BrSu82uFGHq+0eTmGOFaiPrUKAM+dr4kdTNFaKx7HiM=",
         "owner": "Muddyblack",
         "repo": "kde-nixdatifier",
-        "rev": "4847af59fc57196a727ce8d706ea7da625399eba",
+        "rev": "332d0c3230f8a1fec5044b5e90fcb231f248e065",
         "type": "github"
       },
       "original": {
