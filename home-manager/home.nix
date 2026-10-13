@@ -88,6 +88,7 @@
     ripgrep
     virt-viewer
     kdePackages.kcalc
+    discord
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
