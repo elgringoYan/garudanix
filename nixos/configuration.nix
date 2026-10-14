@@ -43,9 +43,6 @@
 
   garuda.flatpak.enable = true;
 
-  programs.appimage.enable = true;
-  programs.appimage.binfmt = true;
-
   # Hardware auto-detected with nixos-facter during installation.
   # Hardware probed during installation, see ./facter.json.
   garuda.hardware.autoDriver.reportPath = ./facter.json;
