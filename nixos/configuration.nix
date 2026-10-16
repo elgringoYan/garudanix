@@ -57,7 +57,7 @@
   # Use the CachyOS kernel (via chaotic-nyx).
   boot.kernelPackages = pkgs.linuxPackages_cachyos;
 
-  networking.hostName = "GarudaNix";
+  networking.hostName = "Salon";
 
   # Set your time zone.
   time.timeZone = "America/Toronto";

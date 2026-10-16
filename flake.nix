@@ -37,7 +37,7 @@
 
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#GarudaNix'
-      nixosConfigurations."GarudaNix" = garuda.lib.garudaSystem {
+      nixosConfigurations."Salon" = garuda.lib.garudaSystem {
         inherit system;
         specialArgs = { inherit inputs; };
         modules = [ ./nixos/configuration.nix ];
