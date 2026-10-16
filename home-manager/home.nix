@@ -88,7 +88,7 @@
     ripgrep
     virt-viewer
     kdePackages.kcalc
-    discord
+    caprine
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
